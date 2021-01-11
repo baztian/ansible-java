@@ -24,12 +24,3 @@ jobs:
       - uses: actions/checkout@v2
       - name: molecule
         uses: robertdebock/molecule-action@2.6.8
-  release:
-    needs:
-      - test
-    runs-on: ubuntu-latest
-    steps:
-      - name: galaxy
-        uses: robertdebock/galaxy-action@1.1.0
-        with:
-          galaxy_api_key: ${{ secrets.galaxy_api_key }}

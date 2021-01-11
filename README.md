@@ -1,7 +1,7 @@
 Role Name
 =========
 
-![CI](https://github.com/baztian/ansible-java/workflows/CI/badge.svg
+![CI](https://github.com/baztian/ansible-java/workflows/CI/badge.svg)
 
 Role to download, install and setup Java plus associated tools.
 
