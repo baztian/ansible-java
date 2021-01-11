@@ -1,0 +1,17 @@
+name: Publish to galaxy
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  release:
+    needs:
+      - lint
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - name: galaxy
+        uses: robertdebock/galaxy-action@1.1.0
+        with:
+          galaxy_api_key: ${{ secrets.galaxy_api_key }}
