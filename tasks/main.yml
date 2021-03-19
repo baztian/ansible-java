@@ -25,7 +25,7 @@
     asdf_plugins:
       - name: java
         versions: "{{ java_versions }}"
-        global: java_default_version
+        global: "{{ java_default_version }}"
 - name: Download Maven 3
   get_url:
     url: http://archive.apache.org/dist/maven/maven-3/{{ maven3_version }}/binaries/apache-maven-{{ maven3_version }}-bin.tar.gz
