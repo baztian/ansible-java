@@ -1,4 +1,12 @@
 ---
+- name: Include OS-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - "default.yml"
 # See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199 and
 # https://github.com/geerlingguy/ansible-role-java/issues/64
 - name: Ensure 'man' directory exists.
@@ -14,10 +22,7 @@
   apt: update_cache=yes cache_valid_time=3600
 - name: Install Java and associated packages
   apt:
-    pkg:
-      - openjdk-8-jdk
-      - openjdk-8-source
-      - visualvm
+    pkg: "{{ java_pkgs }}"
 - name: Install JDK(s) via asdf
   include_role:
     name: baztian.asdf
