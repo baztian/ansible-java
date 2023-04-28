@@ -19,7 +19,9 @@
     - ansible_distribution == 'Ubuntu'
     - ansible_distribution_major_version | int >= 18
 - name: Update apt cache.
-  apt: update_cache=yes cache_valid_time=3600
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
 - name: Install Java and associated packages
   apt:
     pkg: "{{ java_pkgs }}"
