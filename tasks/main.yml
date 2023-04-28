@@ -42,6 +42,7 @@
     url: http://archive.apache.org/dist/maven/maven-3/{{ maven3_version }}/binaries/apache-maven-{{ maven3_version }}-bin.tar.gz
     checksum: "sha512:{{ maven3_sha512 }}"
     dest: /tmp
+    mode: 0644
   when: not mvn3_bin.stat.exists
 - name: Unarchive Maven 3
   unarchive:
@@ -69,6 +70,7 @@
     url: https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/{{ payara_version }}/payara-{{ payara_version }}.tar.gz
     checksum: "sha256:{{ payara_sha256 }}"
     dest: /tmp/payara-{{ payara_version }}.tar.gz
+    mode: 0644
   when: not payara_bin.stat.exists
   tags: payara
 - name: Create Payara {{ payara_version }} directory
