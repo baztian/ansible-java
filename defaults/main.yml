@@ -5,4 +5,5 @@ maven3_sha512: d3be5956712d1c2cf7a6e4c3a2db1841aa971c6097c7a67f59493a5873ccf8c8b
 java_versions:
   - temurin-11.0.19+7
   - temurin-17.0.7+7
-java_default_version: temurin-11.0.19+7
+  - temurin-21.0.5+11.0.LTS
+java_default_version: temurin-21.0.5+11.0.LTS
