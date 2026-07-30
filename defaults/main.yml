@@ -6,4 +6,5 @@ java_versions:
   - temurin-11.0.19+7
   - temurin-17.0.7+7
   - temurin-21.0.5+11.0.LTS
-java_default_version: temurin-21.0.5+11.0.LTS
+  - temurin-25.0.4+7.0.LTS
+java_default_version: temurin-25.0.4+7.0.LTS
